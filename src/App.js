@@ -1,39 +1,30 @@
-import { useEffect } from 'react';
+// import { useState } from 'react';
+import BasicForm from './components/BasicForm';
 
-import axios from 'axios';
-import logo from './assets/logo.svg';
 import './assets/App.css';
 import './assets/all.scss';
+import Navbar from './components/Navbar';
 
 
 function App() {
 
-  useEffect(() => {
-    (async () => {
-      const path = process.env.REACT_APP_API_URL
-      const result = await axios.get(path);
-      console.log(result.data)
-  })();
-},[])
+  // const [num, setNum] = useState(0);
+  // const [text, setText] = useState("預設數值");
+
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <button type="button" className="btn btn-primary">Primary</button>
-      </header>
-    </div>
+    <>
+      {/* <div className="App">
+        {num}
+        <button type="button" onClick={() => setNum(num + 1)}>請按我</button>
+        {text}
+        <input type='text' defaultValue="請輸入數值" onChange={(e) => setText(e.target.value)} />
+
+      </div> */}
+      <Navbar />
+      <BasicForm />
+    </>
+
   );
 }
 
